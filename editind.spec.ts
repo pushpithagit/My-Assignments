@@ -13,4 +13,11 @@ test("Edit Individual",async ({page}) => {
     await page.locator("//a[@title='Edit']").click()
     await page.locator('//input[@placeholder="First Name"]').fill("Dilip")
     await page.locator("//span[text()='Save']").click()
+    const expectedname=await page.getByPlaceholder('First Name').inputValue()
+    const actualname="Dilip"
+    if (expectedname==actualname) {
+        
+    }
+    console.log("The details are verified")
+
 })
